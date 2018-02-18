@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+        android:title="Notification Preferences"
+        >
+        <RingtonePreference
+            android:showDefault="true"
+            android:key="NotificationSound"
+            android:title="Sound"
+            android:defaultValue="content://settings/system/notification_sound"
+            android:ringtoneType="notification"/>
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="checkBoxViberate"
+        android:title="Viberate"/>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="checkBoxLED"
+            android:title="LED"/>
+        <CheckBoxPreference
+            android:key="checkBoxOngoing"
+            android:title="Persistent"
+            android:summary="Prevent "/>
+        <CheckBoxPreference
+            android:key="checkBoxMarkAsDone"
+            android:title="Mark as done"
+            android:summary="Add Mark as done action to the task"/>
+        <CheckBoxPreference
+            android:key="checkBoxSnooze"
+            android:title="Snooze"
+            android:summary="Add a snooze action to the notification"/>
+         </PreferenceCategory>
+    </PreferenceScreen>

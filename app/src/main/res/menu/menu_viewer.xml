@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+      <item android:id="@+id/action_edit"
+          android:title="Edit"
+          android:orderInCategory="70"
+          android:icon="@drawable/ic_create_white_24dp"
+          app:showAsAction="ifRoom"
+          />
+
+      <item android:id="@+id/action_delete"
+            android:title="Delete"
+          android:orderInCategory="80"
+            android:icon="@drawable/ic_delete_white_24dp"
+            app:showAsAction="ifRoom" />
+
+
+      <item android:id="@+id/action_share"
+            android:title="Share"
+            app:showAsAction="never" />
+      <item android:id="@+id/action_mark_as_done"
+            android:title="Mark as done"
+            app:showAsAction="never" />
+
+</menu>
