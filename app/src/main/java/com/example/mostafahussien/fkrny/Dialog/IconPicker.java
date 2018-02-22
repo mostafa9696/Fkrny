@@ -25,27 +25,22 @@ public class IconPicker extends DialogFragment {
     }
 
     IconSelectionListener listener;
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         listener = (IconSelectionListener) context;
     }
-
     @Override @NonNull
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.view_dialog_icons, null);
-
         RecyclerView recyclerView = (RecyclerView) dialogView.findViewById(R.id.icons_recycler_view);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), getResources().getInteger(R.integer.grid_columns)));
         ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getContext(), R.dimen.item_offset);
         recyclerView.addItemDecoration(itemDecoration);
-
         TaskDatabase database = TaskDatabase.getInstance(getContext());
         recyclerView.setAdapter(new IconsAdapter(IconPicker.this, database.getIconList()));
         database.close();
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.Dialog);
         builder.setTitle("Select Icon");
         builder.setView(dialogView);
